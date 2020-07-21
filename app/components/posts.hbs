@@ -1,0 +1,15 @@
+{{yield}}
+<ul class="posts">
+    {{#each @posts as |post index|}}
+    {{#if (lt index this.numberPosts)}}
+    <li {{ on "click" this.toggleDetail }}>{{ post.title }}</li>
+    {{/if}}
+    {{/each}}
+</ul>
+
+
+{{#if this.showDetail}}
+<Post
+    @title="Titles"
+/>
+{{/if}}
