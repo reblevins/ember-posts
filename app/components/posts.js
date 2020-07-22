@@ -16,9 +16,9 @@ export default class PostsComponent extends Component {
         return posts;
     }
 
-    @action toggleDetail() {
-        this.showDetail = !this.showDetail
-    }
+    // @action toggleDetail() {
+    //     this.showDetail = !this.showDetail
+    // }
     @action next() {
         if (this.currentPage == this.totalPages) return
         this.currentPage = this.currentPage + 1

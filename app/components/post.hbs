@@ -1,4 +1,9 @@
 {{yield}}
 <article class="post">
-    <h2>{{ @title }}</h2>
+    <div class="article-inner">
+        <div class="close" {{on "click" this.args.toggleDetail}}>x</div>
+        <h2>{{ @post.title }}</h2>
+        <h3>Id: {{ @post.id }}</h3>
+        <p>{{ @post.body }}</p>
+    </div>
 </article>

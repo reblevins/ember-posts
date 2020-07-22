@@ -1,5 +1,32 @@
-h2 {
-    &.title {
-        color: red !important;
+article.post {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.8);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    .article-inner {
+        position: relative;
+        width: 50vw;
+        box-shadow: 0px 0px 10px 2px #8888884a;
+        background: white;
+        border-radius: 10px;
+        padding: 3em;
+
+        .close {
+            position: absolute;
+            top: 0.5em;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    h2 {
+        text-transform: capitalize;
     }
 }
