@@ -1,9 +1,28 @@
 {{yield}}
 <article class="post">
-    <div class="article-inner">
-        <div class="close" {{on "click" this.args.toggleDetail}}>x</div>
+    <div class="article-content">
         <h2>{{ @post.title }}</h2>
         <h3>Id: {{ @post.id }}</h3>
         <p>{{ @post.body }}</p>
+        <div class="back link" {{on "click" this.toggleDetail}}>&lt; Exit</div>
+    </div>
+    <div class="user-info">
+        <h3>User Info</h3>
+        <div class="name">
+            <span class="label">Name:</span>
+            <span class="value">{{ @user.name }}</span>
+        </div>
+        <div class="email">
+            <span class="label">Email:</span>
+            <a href="mailto:{{ @user.email }}">{{ @user.email }}</a>
+        </div>
+        <div class="phone">
+            <span class="label">Phone:</span>
+            <span class="value">{{ @user.phone }}</span>
+        </div>
+        <div class="website">
+            <span class="label">Website:</span>
+            <a href="//{{ @user.website }}">{{ @user.website }}</a>
+        </div>
     </div>
 </article>

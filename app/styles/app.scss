@@ -1,32 +1,217 @@
-article.post {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255,255,255,0.8);
-    display: grid;
-    align-items: center;
-    justify-items: center;
+// @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,700;1,400&family=Lato&display=swap');
+//
+// * {
+//     font-family: 'Bitter', serif;
+// }
+//
+// body, ul {
+//     padding: 0;
+//     margin: 0;
+// }
+// h1, h2, h3, h4, .posts li {
+//     text-transform: capitalize;
+// }
+//
+// p, .pagination *, .user-info *, .close {
+//     font-family: 'Lato', sans-serif;
+// }
+// h1.site-title {
+//     padding: 1.5rem;
+//     margin-top: 0;
+//     border-bottom: 1px solid;
+// }
+//
+// ul.posts {
+//     list-style-type: none;
+//     padding: 0 1.5rem 1.5rem 1.5rem;
+// }
+//
+// ul.posts li, .pagination a {
+//     font-size: 1.2rem;
+//     &:hover {
+//         background: black;
+//         color: white;
+//     }
+// }
+// a, li, .link {
+//     padding: 5px;
+//     cursor: pointer;
+// }
+// a:visited {
+//     color: black;
+// }
+// .pagination {
+//     padding: 2rem;
+//     font-size: 1.2rem;
+//     border-top: 1px solid gray;
+//     text-align: center;
+//
+//     .disabled {
+//         cursor: not-allowed;
+//         background: #dcdbdb;
+//         color: #888;
+//     }
+//     a, span.link {
+//         display: inline-block;
+//         border: 1px solid gray;
+//         padding: 10px;
+//         border-radius: 5px;
+//         text-decoration: none;
+//         text-transform: uppercase;
+//         // min-width: 120px;
+//     }
+//     span.pages {
+//         padding: 10px;
+//     }
+//     .next {
+//         // margin-left: 10px;
+//     }
+// }
+// article {
+//     position: relative;
+// }
+// .article-content, .user-info {
+//     padding: 0 1.5rem 1.5rem 1.5rem;
+// }
+// .user-info {
+//     padding-top: 0.5rem;
+//     border-top: 1px solid gray;
+//     // margin-top: 1.5rem;
+// }
+// .close {
+//     position: absolute;
+//     right: 1rem;
+//     top: 1rem;
+// }
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-    .article-inner {
-        position: relative;
-        width: 50vw;
-        box-shadow: 0px 0px 10px 2px #8888884a;
-        background: white;
-        border-radius: 10px;
-        padding: 3em;
+$green: #03b503;
 
-        .close {
-            position: absolute;
-            top: 0.5em;
-            font-size: 1.5em;
-            font-weight: bold;
-            cursor: pointer;
-        }
+* {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+}
+html, body, h1 {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: black;
+    color: $green;
+}
+.site-title, .posts, .pagination {
+    padding:  2rem;
+}
+.site-title {
+    border-bottom: 1px dotted $green;
+    padding-bottom: 2rem;
+    padding-left: 1.2rem;
+}
+h2, .title {
+    // text-transform: capitalize;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+a, li, .link {
+    color: $green;
+    padding: 5px;
+    cursor: pointer;
+}
+.link.disabled {
+    cursor: not-allowed;
+    color: #03b50363;
+}
+a, li, .back {
+    cursor: pointer;
+    &:hover {
+        background: $green;
+        color: white;
     }
+}
+.back {
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+}
+article.post {
+    .article-inner {
+        background: black;
+        color: $green;
+    }
+}
+.article-content, .user-info {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+.user-info {
+    border: dotted $green;
+    border-width: 1px 0 0 0;
 
-    h2 {
-        text-transform: capitalize;
+    div {
+        padding: 5px;
+    }
+}
+.pagination {
+    text-align: center;
+    margin: 2em 0;
+    padding: 2em 7px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+
+    span, a {
+        border: dotted $green;
+    }
+    .previous, .next {
+        border-width: 1px;
+        padding: 8px;
+    }
+    .pages {
+        border-width: 1px 0;
+        padding: 8px;
+    }
+}
+@media (min-width: 1024px) {
+    .pagination {
+        border-top: 1px dotted $green;
+        padding: 2em 25vw;
+    }
+    article.post {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-gap: 4em;
+        .user-info {
+            border-width: 0 0 0 1px;
+            padding-left: 2em;
+        }
+        // position: absolute;
+    //     top: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     right: 0;
+    //     background: rgba(255,255,255,0.8);
+    //     display: grid;
+    //     align-items: center;
+    //     justify-items: center;
+    //
+    //     .article-inner {
+    //         position: relative;
+    //         width: 50vw;
+    //         box-shadow: 0px 0px 10px 2px #8888884a;
+    //         background: white;
+    //         border-radius: 10px;
+    //         padding: 3em;
+    //
+    //         .close {
+    //             position: absolute;
+    //             top: 0.5em;
+    //             font-size: 1.5em;
+    //             font-weight: bold;
+    //             cursor: pointer;
+    //         }
+    //     }
     }
 }

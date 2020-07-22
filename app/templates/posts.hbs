@@ -1,0 +1,27 @@
+{{outlet}}
+{{#if this.showDetail}}
+<Post
+    @post={{post}}
+    @user={{user}}
+    @toggleDetail={{this.toggleDetail}}
+/>
+{{else}}
+<ul class="posts">
+    {{#each this.model.posts as |post index|}}
+    <li class="title" {{on "click" (fn this.toggleDetail post)}}>{{post.title}}</li>
+    {{/each}}
+</ul>
+<div class="pagination">
+    {{#if this.model.previousPage}}
+    <LinkTo class="previous" @route="posts" @model="{{this.model.previousPage}}" class="button">&lt; Previous</LinkTo>
+    {{else}}
+    <span class="previous link disabled">&lt; Previous</span>
+    {{/if}}
+    <span class="pages">{{this.model.currentPage}} / {{this.model.totalPages}}</span>
+    {{#if this.model.nextPage}}
+    <LinkTo class="next" @route="posts" @model="{{this.model.nextPage}}" class="button">Next &gt;</LinkTo>
+    {{else}}
+    <span class="next link disabled">Next &gt;</span>
+    {{/if}}
+</div>
+{{/if}}
