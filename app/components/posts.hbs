@@ -1,11 +1,14 @@
 {{yield}}
 <ul class="posts">
     {{#each this.posts as |post index|}}
-    <!-- {{#if (lt index this.numberPosts)}} -->
-    <li {{ on "click" this.toggleDetail }}>{{ post.title }}</li>
-    <!-- {{/if}} -->
+    <li {{ on "click" this.toggleDetail }}>{{ post.id }} - {{ post.title }}</li>
     {{/each}}
 </ul>
+<div class="pagination">
+    <button {{ on "click" this.previous }}>Previous</button>
+    {{ this.currentPage }} / {{ this.totalPages }}
+    <button {{ on "click" this.next }}>Next</button>
+</div>
 
 
 {{#if this.showDetail}}
