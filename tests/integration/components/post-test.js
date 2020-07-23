@@ -22,13 +22,13 @@ module('Integration | Component | post', function(hooks) {
                 userId: 1,
                 id: 1,
                 title: "Title",
-                body: "Body",
-                user: {
-                    email: "Sincere@april.biz",
-                    name: "Leanne Graham",
-                    phone: "1-770-736-8031 x56442",
-                    website: "hildegard.org"
-                }
+                body: "Body"
+            },
+            user: {
+                email: "Sincere@april.biz",
+                name: "Leanne Graham",
+                phone: "1-770-736-8031 x56442",
+                website: "hildegard.org"
             }
         });
         this.set('toggleDetail', (actual) => {
@@ -37,6 +37,7 @@ module('Integration | Component | post', function(hooks) {
         });
         await render(hbs`<Post
             @post={{this.post}}
+            @user={{this.user}}
             @toggleDetail={{this.toggleDetail}}
         />`);
 

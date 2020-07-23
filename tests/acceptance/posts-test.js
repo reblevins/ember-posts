@@ -5,30 +5,25 @@ import { setupApplicationTest } from 'ember-qunit';
 module('Acceptance | posts', function(hooks) {
     setupApplicationTest(hooks);
 
-    test('visiting /', async function(assert) {
+    test('visiting / forwards to /1', async function(assert) {
         await visit('/');
 
         assert.equal(currentURL(), '/1');
-        assert.dom('h1').hasText('posts.exe');
+        assert.dom('h1').hasText('Da Blawg');
         assert.dom('ul li').exists({ count: 20 });
     });
 
-    test('clicking next', async function(assert) {
-        await visit('/');
+    test('clicking post opens modal', async function(assert) {
+        await visit('/2');
 
-        assert.dom('a.next').exists()
-        await click('a.next');
-        assert.equal(currentURL(), '/2');
-    });
+        this.setProperties({
+            model: {
+                currentPage: 1
+            }
+        });
+        assert.dom('article.post').doesNotExist();
 
-    test('clicking previous', async function(assert) {
-        await visit('/');
-
-        assert.dom('a.previous').doesNotExist()
-        await click('a.next');
-
-        assert.dom('a.previous').exists()
-        await click('a.previous');
-        assert.equal(currentURL(), '/1');
+        await click('ul li');
+        assert.dom('article.post').exists();
     });
 });

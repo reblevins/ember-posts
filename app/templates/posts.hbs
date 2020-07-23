@@ -13,15 +13,15 @@
 </ul>
 <div class="pagination">
     {{#if this.model.previousPage}}
-    <LinkTo class="previous" @route="posts" @model="{{this.model.previousPage}}" class="button">&lt; Previous</LinkTo>
+    <LinkTo class="previous" @route="posts" @model="{{this.model.previousPage}}" class="button">Previous Page</LinkTo>
     {{else}}
-    <span class="previous link disabled">&lt; Previous</span>
+    <span class="previous link disabled">Previous Page</span>
     {{/if}}
     <span class="pages">{{this.model.currentPage}} / {{this.model.totalPages}}</span>
     {{#if this.model.nextPage}}
-    <LinkTo class="next" @route="posts" @model="{{this.model.nextPage}}" class="button">Next &gt;</LinkTo>
+    <LinkTo class="next" @route="posts" @model="{{this.model.nextPage}}" class="button">Next Page</LinkTo>
     {{else}}
-    <span class="next link disabled">Next &gt;</span>
+    <span class="next link disabled">Next Page</span>
     {{/if}}
 </div>
 {{/if}}
