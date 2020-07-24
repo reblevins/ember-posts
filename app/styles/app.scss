@@ -29,9 +29,10 @@ h1.site-title {
 ul.posts {
     list-style-type: none;
     background: #f4f4f4;
+    position: relative;
 }
 
-ul.posts li, .pagination a {
+ul.posts li, .pagination a, .article-content .link {
     font-size: 1.2rem;
     &:hover {
         background: $soft-gray;
@@ -60,13 +61,10 @@ a:visited {
 .pagination {
     padding: 2rem;
     font-size: 1.2rem;
-    // border-top: solid 1px $soft-gray;
-    // background: #f4f4f4;
     text-align: center;
 
     .disabled {
         cursor: not-allowed;
-        // background: #dcdbdb;
         color: $soft-gray !important;
     }
     a, span.link {
@@ -76,13 +74,9 @@ a:visited {
         padding: 10px;
         text-decoration: none;
         text-transform: uppercase;
-        // min-width: 120px;
     }
     span.pages {
         padding: 10px;
-    }
-    .next {
-        // margin-left: 10px;
     }
 }
 article {
@@ -96,8 +90,6 @@ article {
     padding-top: 0.5rem;
     border: solid $soft-gray;
     border-width: 1px 0;
-
-    // margin-top: 1.5rem;
 }
 .close {
     position: absolute;
@@ -105,140 +97,15 @@ article {
     top: 1rem;
 }
 @media (min-width: 1024px) {
-    ul.posts {
+    ul.posts, article.post {
         padding: 1.5rem;
     }
+    article.post {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        .user-info {
+            border-width: 0 0 0 1px;
+            padding-left: 2em;
+        }
+    }
 }
-// @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
-//
-// $green: #03e003;
-//
-// * {
-//     font-family: 'Roboto Mono', monospace;
-//     text-transform: uppercase;
-// }
-// html, body, h1 {
-//     margin: 0;
-//     padding: 0;
-// }
-// body {
-//     // background: #002f00;
-//     background: #282828;
-//     color: $green;
-// }
-// .site-title, .posts, .pagination {
-//     padding:  2rem;
-// }
-// .site-title {
-//     border-bottom: 1px dotted $green;
-//     // padding-bottom: 2rem;
-//     // padding-left: 1.2rem;
-// }
-// h2, .title {
-//     // text-transform: capitalize;
-// }
-// ul {
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0 0 5px 0;
-// }
-// a, li, .link {
-//     color: $green;
-//     padding: 5px;
-//     cursor: pointer;
-// }
-// .link.disabled {
-//     cursor: not-allowed;
-//     color: #03b50363;
-// }
-// a, li, .back {
-//     cursor: pointer;
-//     &:hover {
-//         background: $green;
-//         color: white;
-//     }
-// }
-// .back {
-//     display: inline-block;
-// }
-// a {
-//     text-decoration: none;
-// }
-// article.post {
-//     .article-inner {
-//         background: black;
-//         color: $green;
-//     }
-// }
-// .article-content, .user-info {
-//     padding: 0 1.5rem 1.5rem 1.5rem;
-// }
-// .user-info {
-//     border: dotted $green;
-//     border-width: 1px 0 0 0;
-//
-//     div {
-//         padding: 5px;
-//     }
-// }
-// .pagination {
-//     text-align: center;
-//     margin: 2em 0;
-//     padding: 2em 7px;
-//     display: grid;
-//     grid-template-columns: repeat(3, 1fr);
-//     align-items: center;
-//
-//     span, a {
-//         border: dotted $green;
-//     }
-//     .previous, .next {
-//         border-width: 1px;
-//         padding: 8px;
-//     }
-//     .pages {
-//         border-width: 1px 0;
-//         padding: 8px;
-//     }
-// }
-// @media (min-width: 1024px) {
-//     .pagination {
-//         border-top: 1px dotted $green;
-//         padding: 2em 25vw;
-//     }
-//     article.post {
-//         display: grid;
-//         grid-template-columns: 2fr 1fr;
-//         grid-gap: 4em;
-//         .user-info {
-//             border-width: 0 0 0 1px;
-//             padding-left: 2em;
-//         }
-//         // position: absolute;
-//     //     top: 0;
-//     //     bottom: 0;
-//     //     left: 0;
-//     //     right: 0;
-//     //     background: rgba(255,255,255,0.8);
-//     //     display: grid;
-//     //     align-items: center;
-//     //     justify-items: center;
-//     //
-//     //     .article-inner {
-//     //         position: relative;
-//     //         width: 50vw;
-//     //         box-shadow: 0px 0px 10px 2px #8888884a;
-//     //         background: white;
-//     //         border-radius: 10px;
-//     //         padding: 3em;
-//     //
-//     //         .close {
-//     //             position: absolute;
-//     //             top: 0.5em;
-//     //             font-size: 1.5em;
-//     //             font-weight: bold;
-//     //             cursor: pointer;
-//     //         }
-//     //     }
-//     }
-// }
