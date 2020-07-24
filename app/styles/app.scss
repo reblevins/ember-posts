@@ -30,10 +30,11 @@ h1.site-title {
 ul.posts {
     list-style-type: none;
     background: #f4f4f4;
+    position: relative;
 }
 
-ul.posts li, .pagination a {
-    font-size: 1rem;
+ul.posts li, .pagination a, .article-content .link {
+    font-size: 1.2rem;
     &:hover {
         background: $soft-gray;
         color: $text;
@@ -68,7 +69,6 @@ a:visited {
 
     .disabled {
         cursor: not-allowed;
-        // background: #dcdbdb;
         color: $soft-gray !important;
     }
     a, span.link {
@@ -78,13 +78,9 @@ a:visited {
         padding: 10px;
         text-decoration: none;
         text-transform: uppercase;
-        // min-width: 120px;
     }
     span.pages {
         padding: 10px;
-    }
-    .next {
-        // margin-left: 10px;
     }
 }
 article {
@@ -98,8 +94,6 @@ article {
     padding-top: 0.5rem;
     border: solid $soft-gray;
     border-width: 1px 0;
-
-    // margin-top: 1.5rem;
 }
 .close {
     position: absolute;
@@ -109,6 +103,17 @@ article {
 @media (min-width: 1024px) {
     h1.site-title {
         padding: 2rem;
+    }
+    ul.posts, article.post {
+        padding: 1.5rem;
+    }
+    article.post {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        .user-info {
+            border-width: 0 0 0 1px;
+            padding-left: 2em;
+        }
     }
     ul.posts {
         padding: 1.5rem;
