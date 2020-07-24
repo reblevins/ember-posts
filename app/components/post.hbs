@@ -8,21 +8,16 @@
     </div>
     <div class="user-info">
         <h3>User Info</h3>
-        <div class="name">
-            <span class="label">Name:</span>
-            <span class="value">{{ @user.name }}</span>
-        </div>
-        <div class="email">
-            <span class="label">Email:</span>
-            <a href="mailto:{{ @user.email }}">{{ @user.email }}</a>
-        </div>
-        <div class="phone">
-            <span class="label">Phone:</span>
-            <span class="value">{{ @user.phone }}</span>
-        </div>
-        <div class="website">
-            <span class="label">Website:</span>
-            <a href="//{{ @user.website }}">{{ @user.website }}</a>
-        </div>
+        <h4 class="name">{{ @user.name }}</h4>
+        <span class="label">Email:</span>
+        <a class="email" href="mailto:{{ @user.email }}">{{ @user.email }}</a>
+        <span class="label">Phone:</span>
+        <span class="value phone">{{ @user.phone }}</span>
+        <span class="label">Website:</span>
+        <a class="website" href="//{{ @user.website }}">{{ @user.website }}</a>
+        <span class="address">
+            {{@user.address.street}} {{@user.address.suite}}<br />
+            {{@user.address.city}} {{@user.address.zipcode}}<br />
+        </span>
     </div>
 </article>

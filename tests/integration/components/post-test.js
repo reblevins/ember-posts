@@ -45,9 +45,9 @@ module('Integration | Component | post', function(hooks) {
         assert.dom('article p').hasText('Body');
         assert.dom('article div.user-info').exists()
         assert.dom('article div.user-info h3').hasText("User Info")
-        assert.dom('article div.user-info .name span.value').hasText("Leanne Graham")
-        assert.dom('article div.user-info .website a').hasText("hildegard.org")
-        assert.dom('article div.user-info .email a').hasText("Sincere@april.biz")
-        assert.dom('article div.user-info .phone span.value').hasText("1-770-736-8031 x56442")
+        assert.dom('article div.user-info .name').hasText("Leanne Graham")
+        assert.dom('article div.user-info .website').hasText("hildegard.org")
+        assert.dom('article div.user-info .email').hasText("Sincere@april.biz")
+        assert.dom('article div.user-info .phone').hasText("1-770-736-8031 x56442")
     })
 });

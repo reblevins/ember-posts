@@ -111,8 +111,20 @@ article {
         display: grid;
         grid-template-columns: 2fr 1fr;
         .user-info {
+            padding-top: 2em;
             border-width: 0 0 0 1px;
             padding-left: 2em;
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            align-items: center;
+            grid-auto-rows: min-content;
+            grid-gap: 0.5em 0;
+
+            h3, h4, .address {
+                grid-column: span 2;
+                margin: 0;
+            }
+            a { padding: 0; }
         }
     }
     ul.posts {
