@@ -104,6 +104,10 @@ article {
     h1.site-title {
         padding: 2rem;
     }
+    .content {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
     ul.posts, article.post {
         padding: 1.5rem;
     }
